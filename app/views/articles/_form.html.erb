@@ -1,0 +1,10 @@
+<h1><%= @article.new_record? ? 'New article' : 'Edit article' %></h1>
+
+<%= simple_form_for(@article) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to("Show", article_path(@article)) + " |" unless @article.new_record? %>
+<%= link_to "Back", articles_path %>

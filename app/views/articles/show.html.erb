@@ -1,0 +1,15 @@
+
+<article>
+<h1><%= @article.title %>
+  <small class="h5">
+  <%=link_to edit_article_path(@article) do %>
+    <%=fa_icon "pen"%>
+  <%end%>
+  <%=link_to article_path(@article), method: :delete, data: { confirm: "Are you sure?" } do %>
+    <%=fa_icon "trash-alt"%>
+  <%end%>
+  </small>
+</h1>
+<hr>
+<%= simple_format(@article.content) %>
+</article>
